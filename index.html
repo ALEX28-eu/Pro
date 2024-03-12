@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+
+  <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+  <title>UnderGrounded</title>
+  <link rel="icon" href="assets/night.jpg" type="image/x-icon">
+<script src="shoot.js"></script>
+</head>
+
+<body>
+  <a-scene id="scene" light="defaultLightsEnabled: false" physics="debug:false">
+
+    <!--Assets-->
+    <a-assets>
+      <a-asset-item id="shooter" src="watergun/scene.gltf"></a-asset-item>
+      <a-asset-item id="Enemy" src="Enemy/scene.gltf"></a-asset-item>
+    </a-assets>
+
+
+    <!--Light-->
+    <!-- <a-entity light="type: ambient; color: white; intensity:1"></a-entity> -->
+    <a-entity light="color: #AFA; intensity: 1.5" position="-1 1 0"></a-entity>
+
+    <!--A-Frame Environment-->
+    <a-entity id="environment" environment="preset:forest; skyType:gradient; lighting:Point"></a-entity>
+
+
+
+    <!-- shooter  and Camera entity -->
+<a-entity
+id="camera"
+camera
+position="0 1.6 0"
+wasd-controls
+look-controls="pointerLockEnabled:trues">
+
+<a-cursor></a-cursor>
+
+</a-entity>
+    <!-- <a-camera>
+      <a-entity id="player" gltf-model="#shooter" scale="0.1 0.1 0.1" position="1.5 -1.029 -2"
+        rotation="13.701 -177.92 0"></a-entity>
+
+    </a-camera> -->
+
+   <!--Bullets-->
+   <a-entity bullets ="position:0 0 -5"></a-entity>
+
+<!-- enemy -->
+<a-entity id="Enemy1" gltf-model="#Enemy" scale="0.979 0.901 1.365" position="00.1 0.021 -2.074 "
+        rotation="0.000 -2.913 -0.913"></a-entity>
+<a-entity id="Enemy2" gltf-model="#Enemy" scale="0.979 0.901 1.365" position="-1.432 0.021 -2.074 "
+        rotation="0.000 -2.913 -0.913"></a-entity>
+<a-entity id="Enemy3" gltf-model="#Enemy" scale="0.979 0.901 1.365" position="1.685 0.021 -2.074 "
+        rotation="0.000 -2.913 -0.913"></a-entity>
+
+
+  </a-scene>
+</body>
+
+</html>
